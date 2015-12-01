@@ -39,6 +39,4 @@ setupNetwork
 
 ip netns exec netns_byod \
 unshare -f -muip --mount-proc  \
-chroot $conFs /bin/sh -c "/bin/mount -t proc proc /proc && $cmd"
-
-
+chroot $conFs /bin/sh -c "PATH=/bin && /bin/mount -t proc proc /proc && $cmd"

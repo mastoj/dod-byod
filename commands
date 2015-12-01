@@ -1,0 +1,31 @@
+btrfs subvolume create /var/byod/btrfs/x
+btrfs subvolume create /var/byod/btrfs/y
+
+
+btrfs subvolume list .
+
+btrsf subvolume snapshot x xsnap
+
+
+ls
+cat x/abc
+cat xsnap/abc
+echo hello > x/abc
+cat xsnap/abc
+
+btrfs subvolume list .
+
+touch /main
+
+chroot base-image/ ls /
+
+unshare -u /bin/bash
+
+hostname
+
+hostname dod
+
+exit
+hostname
+
+unshare -f -p --mount-proc ps aux
